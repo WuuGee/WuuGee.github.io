@@ -1,23 +1,494 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>My Bootstrap Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Low Qian Tong - Software Application Engineer portfolio. Explore projects, profile, and contact information.">
+  <meta property="og:title" content="Low Qian Tong | Portfolio">
+  <meta property="og:description" content="Candy-colored programmer-themed portfolio and personal profile.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://dummyimage.com/1200x630/f8b4d9/2d1b69&text=Low+Qian+Tong+Portfolio">
+  <meta property="og:url" content="https://your-github-username.github.io/">
+  <title>Low Qian Tong | Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%AC%3C/text%3E%3C/svg%3E">
 
-  <!-- Bootstrap CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #fff6fb;
+      --bg-soft: #ffe7f4;
+      --text-main: #2f1f4f;
+      --text-soft: #6f5b91;
+      --candy-pink: #ff6fb7;
+      --candy-blue: #65d8ff;
+      --candy-yellow: #ffe071;
+      --candy-mint: #79f2c0;
+      --panel: rgba(255, 255, 255, 0.8);
+      --shadow: 0 12px 30px rgba(47, 31, 79, 0.14);
+      --radius-xl: 1.5rem;
+    }
+
+    [data-theme="dark"] {
+      --bg-main: #120c22;
+      --bg-soft: #1e1538;
+      --text-main: #f3ebff;
+      --text-soft: #c7b8e8;
+      --candy-pink: #ff7dc0;
+      --candy-blue: #74e4ff;
+      --candy-yellow: #ffe98f;
+      --candy-mint: #8cfacb;
+      --panel: rgba(31, 22, 57, 0.76);
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.38);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 12% 10%, rgba(255, 111, 183, 0.34), transparent 32%),
+        radial-gradient(circle at 90% 16%, rgba(101, 216, 255, 0.28), transparent 34%),
+        radial-gradient(circle at 72% 76%, rgba(121, 242, 192, 0.24), transparent 36%),
+        var(--bg-main);
+      color: var(--text-main);
+      font-family: "Space Grotesk", sans-serif;
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .mono {
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .navbar {
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg-main) 76%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--text-soft) 14%, transparent);
+    }
+
+    .brand-pill {
+      background: linear-gradient(120deg, var(--candy-pink), var(--candy-blue));
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      box-shadow: var(--shadow);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .hero {
+      padding: 7rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 224, 113, 0.4), transparent 70%);
+      right: -80px;
+      top: -80px;
+      pointer-events: none;
+    }
+
+    .glass-card {
+      background: var(--panel);
+      border: 1px solid color-mix(in srgb, var(--text-soft) 18%, transparent);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-code {
+      background: linear-gradient(155deg, color-mix(in srgb, var(--bg-soft) 85%, #fff), var(--bg-soft));
+      border: 1px solid color-mix(in srgb, var(--text-soft) 24%, transparent);
+      border-radius: 1.2rem;
+      padding: 1.2rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .btn-candy {
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(120deg, var(--candy-pink), #ff9bd0 45%, var(--candy-blue));
+      box-shadow: 0 8px 18px rgba(255, 111, 183, 0.34);
+    }
+
+    .btn-candy:hover {
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    .btn-outline-candy {
+      border: 1px solid color-mix(in srgb, var(--candy-pink) 65%, var(--text-main));
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .btn-outline-candy:hover {
+      background: color-mix(in srgb, var(--candy-pink) 18%, transparent);
+      color: var(--text-main);
+    }
+
+    .section-title {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: color-mix(in srgb, var(--candy-blue) 28%, transparent);
+      color: var(--text-main);
+      margin: 0.2rem 0.2rem 0 0;
+    }
+
+    .project-card {
+      transition: transform 0.25s ease;
+      height: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-img {
+      border-radius: 1rem;
+      object-fit: cover;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+    }
+
+    .timeline-item {
+      border-left: 3px solid var(--candy-blue);
+      padding-left: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .social-btn {
+      border-radius: 0.8rem;
+      border: 1px solid color-mix(in srgb, var(--text-soft) 22%, transparent);
+      color: var(--text-main);
+    }
+
+    .social-btn:hover {
+      background: color-mix(in srgb, var(--candy-mint) 24%, transparent);
+    }
+
+    .floating-back {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(130deg, var(--candy-mint), var(--candy-blue));
+      color: #10222a;
+      font-size: 1.25rem;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: all 0.25s ease;
+      z-index: 1000;
+    }
+
+    .floating-back.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    footer {
+      background: color-mix(in srgb, var(--bg-soft) 75%, transparent);
+      border-top: 1px solid color-mix(in srgb, var(--text-soft) 18%, transparent);
+    }
+  </style>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container py-2">
+      <a class="navbar-brand mono fw-bold" href="#home"><span class="brand-pill">LQT.dev</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <button class="btn btn-primary">Hello Bootstrap</button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacts">Contacts</a></li>
+        </ul>
+        <button id="themeToggle" class="btn btn-sm btn-outline-candy mono" type="button" aria-label="Toggle dark mode">Mode: Light</button>
+      </div>
+    </div>
+  </nav>
 
-  <!-- Bootstrap JS -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7 reveal">
+          <span class="badge text-bg-light mono mb-3">Software Application Engineer @ Intel Corporation</span>
+          <h1 class="display-4 fw-bold mb-3">Low Qian Tong<br>Builds clean systems with playful energy.</h1>
+          <p class="lead text-secondary mb-4">
+            Welcome to my candy-coded corner of the internet. I design and ship software applications,
+            prototype ideas fast, and keep user experience at the center.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-candy btn-lg" href="#projects">View My Projects</a>
+            <a class="btn btn-outline-candy btn-lg" href="assets/LowQianTong-CV.txt" download>Download CV</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 reveal" style="transition-delay: 0.15s;">
+          <div class="hero-code glass-card">
+<span class="text-secondary">// now()</span>
+<br>const engineer = {
+<br>&nbsp;&nbsp;name: <span style="color: var(--candy-pink)">"Low Qian Tong"</span>,
+<br>&nbsp;&nbsp;role: <span style="color: var(--candy-blue)">"Software Application Engineer"</span>,
+<br>&nbsp;&nbsp;stack: [<span style="color: var(--candy-mint)">"Python"</span>, <span style="color: var(--candy-mint)">"JavaScript"</span>, <span style="color: var(--candy-mint)">"Cloud"</span>],
+<br>&nbsp;&nbsp;focus: <span style="color: var(--candy-yellow)">"Reliable apps, scalable impact"</span>
+<br>};
+<br>
+<br><span class="text-secondary">// status</span>
+<br>console.log(<span style="color: var(--candy-pink)">"Open to collaborations"</span>);
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-7 reveal">
+            <div class="glass-card p-4 p-md-5">
+              <h2 class="section-title mb-3">About Me</h2>
+              <p class="text-secondary">
+                I am Low Qian Tong, a software application engineer in Intel Corporation. I enjoy turning
+                complex technical requirements into practical, maintainable products. My current work includes
+                automation workflows, internal tools, and service integrations that improve engineering velocity.
+              </p>
+              <p class="text-secondary mb-2">Core interests:</p>
+              <div>
+                <span class="tag">Application Development</span>
+                <span class="tag">Automation</span>
+                <span class="tag">Data Pipelines</span>
+                <span class="tag">Cloud Services</span>
+                <span class="tag">UX for Engineers</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 reveal" style="transition-delay: 0.12s;">
+            <div class="glass-card p-4 p-md-5 h-100">
+              <h3 class="h5 mb-3">Journey Snapshot</h3>
+              <div class="timeline-item">
+                <p class="mono mb-1 fw-semibold">2026</p>
+                <p class="mb-0 text-secondary">Leading internal workflow improvements and app optimization initiatives.</p>
+              </div>
+              <div class="timeline-item">
+                <p class="mono mb-1 fw-semibold">2025</p>
+                <p class="mb-0 text-secondary">Scaled reporting dashboard from proof-of-concept to production usage.</p>
+              </div>
+              <div class="timeline-item mb-0">
+                <p class="mono mb-1 fw-semibold">2024</p>
+                <p class="mb-0 text-secondary">Built first automation tools that reduced repetitive support tasks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-4 reveal">
+          <div>
+            <h2 class="section-title mb-1">Featured Projects</h2>
+            <p class="text-secondary mb-0">Placeholder projects for now. Replace them with your real work anytime.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="glass-card project-card p-3">
+              <img class="project-img mb-3" src="https://dummyimage.com/800x500/ffb3d9/2a1f45&text=Project+01" alt="Dummy project screenshot 1">
+              <h3 class="h5">Factory Ops Dashboard</h3>
+              <p class="text-secondary">Monitoring dashboard with role-based views, quick filters, and exportable reports.</p>
+              <a href="#" class="btn btn-sm btn-outline-candy">View Details</a>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.08s;">
+            <article class="glass-card project-card p-3">
+              <img class="project-img mb-3" src="https://dummyimage.com/800x500/9ddcff/1c2942&text=Project+02" alt="Dummy project screenshot 2">
+              <h3 class="h5">Auto QA Runner</h3>
+              <p class="text-secondary">Automated validation pipeline that triggers smoke tests and publishes result summaries.</p>
+              <a href="#" class="btn btn-sm btn-outline-candy">View Details</a>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.16s;">
+            <article class="glass-card project-card p-3">
+              <img class="project-img mb-3" src="https://dummyimage.com/800x500/b5f5cf/16322a&text=Project+03" alt="Dummy project screenshot 3">
+              <h3 class="h5">Issue Triage Bot</h3>
+              <p class="text-secondary">Service bot that classifies incoming bug reports and routes them to the right teams.</p>
+              <a href="#" class="btn btn-sm btn-outline-candy">View Details</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6 reveal">
+            <div class="glass-card p-4 p-md-5 h-100">
+              <h2 class="section-title mb-3">Let Us Build Something</h2>
+              <p class="text-secondary mb-4">This is a front-end only contact form template. Connect it to Formspree or your preferred endpoint later.</p>
+
+              <form action="https://formspree.io/f/your-form-id" method="POST" class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label mono">Name</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label mono">Email</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label mono">Message</label>
+                  <textarea id="message" name="message" class="form-control" rows="4" placeholder="Tell me about your project"></textarea>
+                </div>
+                <div class="col-12 d-flex gap-2 flex-wrap">
+                  <button type="submit" class="btn btn-candy">Send Message</button>
+                  <a class="btn btn-outline-candy" href="mailto:dummy@example.com">Quick Email</a>
+                </div>
+              </form>
+
+              <hr class="my-4">
+
+              <p class="mono mb-2">Social & Links</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#" class="btn social-btn">GitHub</a>
+                <a href="#" class="btn social-btn">LinkedIn</a>
+                <a href="#" class="btn social-btn">X / Twitter</a>
+                <a href="#" class="btn social-btn">Instagram</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal" style="transition-delay: 0.1s;">
+            <div class="glass-card p-3 p-md-4 h-100">
+              <h3 class="h5 px-2 pt-2">Location</h3>
+              <div class="ratio ratio-4x3 rounded overflow-hidden">
+                <iframe
+                  src="https://maps.google.com/maps?q=Penang%2C%20Malaysia&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                  title="Map location"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <p class="text-secondary mt-3 mb-0 px-2">Map is embedded as a visual placeholder and can be changed to your exact location later.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-4" id="footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <p class="mb-0 mono">© 2026 Low Qian Tong. All rights reserved.</p>
+      <p class="mb-0 text-secondary">Built with Bootstrap on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="floating-back" aria-label="Back to top">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById("themeToggle");
+    const backToTop = document.getElementById("backToTop");
+    const reveals = document.querySelectorAll(".reveal");
+
+    function setTheme(theme) {
+      root.setAttribute("data-theme", theme);
+      themeToggle.textContent = theme === "dark" ? "Mode: Dark" : "Mode: Light";
+      localStorage.setItem("theme", theme);
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      setTheme(nextTheme);
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 360) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    reveals.forEach((element) => observer.observe(element));
   </script>
 </body>
 </html>
-``
