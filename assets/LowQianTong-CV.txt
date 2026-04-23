@@ -1,0 +1,45 @@
+LOW QIAN TONG
+Software Application Engineer, Intel Corporation
+
+----------------------------------------
+PROFILE
+----------------------------------------
+Passionate software application engineer focused on building maintainable, user-centered systems. Experienced in automation, internal tooling, and workflow optimization.
+
+----------------------------------------
+CORE SKILLS (DUMMY)
+----------------------------------------
+- Application Development
+- Automation Pipelines
+- API Integration
+- Data Visualization
+- Cloud Services
+
+----------------------------------------
+EXPERIENCE (DUMMY)
+----------------------------------------
+Intel Corporation
+Software Application Engineer
+2024 - Present
+- Built and maintained internal engineering tools.
+- Improved reporting efficiency through automation workflows.
+- Collaborated with cross-functional teams for feature delivery.
+
+----------------------------------------
+PROJECT HIGHLIGHTS (DUMMY)
+----------------------------------------
+1. Factory Ops Dashboard
+2. Auto QA Runner
+3. Issue Triage Bot
+
+----------------------------------------
+EDUCATION (DUMMY)
+----------------------------------------
+Bachelor of Computer Science
+
+----------------------------------------
+CONTACT (DUMMY)
+----------------------------------------
+Email: dummy@example.com
+GitHub: https://github.com/dummy
+LinkedIn: https://linkedin.com/in/dummy
