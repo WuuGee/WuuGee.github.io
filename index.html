@@ -48,7 +48,7 @@
           <span class="badge text-bg-light mono mb-3">Software Application Engineer @ Intel Corporation</span>
           <h1 class="display-4 fw-bold mb-3">Low Qian Tong<br>Builds clean systems with playful energy.</h1>
           <p class="lead text-secondary mb-4">
-            My work spans application development, automation, and data visualization, including internal tools, dashboards, and system integrations. I’m particularly motivated by improving engineering efficiency—whether by streamlining workflows, automating repetitive tasks, or designing systems that are intuitive for other engineers to use.
+            My work spans application development, automation, and data visualization, including internal tools, dashboards, and system integrations. I'm particularly motivated by improving engineer[...]
           </p>
           <div class="d-flex flex-wrap gap-2">
             <a class="btn btn-candy btn-lg" href="#projects">View My Projects</a>
@@ -82,7 +82,7 @@
             <div class="glass-card p-4 p-md-5 h-100">
               <h2 class="section-title mb-3">About Me</h2>
               <p class="text-secondary">
-               I’m Low Qian Tong, a Software Application Engineer at Intel Corporation, with a strong interest in building clean, reliable, and maintainable systems. I enjoy translating complex technical requirements into practical software solutions that solve real problems.
+               I'm Low Qian Tong, a Software Application Engineer at Intel Corporation, with a strong interest in building clean, reliable, and maintainable systems. I enjoy translating complex [...]
               </p>
               <p class="text-secondary mb-2">Core interests:</p>
               <div>
@@ -102,7 +102,7 @@
     <div class="timeline-scroll">
       <div class="timeline-item">
         <p class="mono mb-1 fw-semibold">2026</p>
-        <p class="mb-0 text-secondary">Software Application Engineer at <strong>Intel</strong>, developing production‑grade C# systems for equipment communication using SECS/GEM, owning projects end‑to‑end from design, deployment to testing.</p>
+        <p class="mb-0 text-secondary">Software Application Engineer at <strong>Intel</strong>, developing production‑grade C# systems for equipment communication using SECS/GEM, owning projects end[...]
       </div>
       <div class="timeline-item">
         <p class="mono mb-1 fw-semibold">2025</p>
@@ -110,7 +110,7 @@
       </div>
       <div class="timeline-item">
         <p class="mono mb-1 fw-semibold">2025</p>
-        <p class="mb-0 text-secondary">Delivered internal web applications, dashboards, and automation tools during internships at <strong>Micron</strong>, improving visibility, compliance tracking, and operational efficiency.</p>
+        <p class="mb-0 text-secondary">Delivered internal web applications, dashboards, and automation tools during internships at <strong>Micron</strong>, improving visibility, compliance tracking, a[...]
       </div>
       <div class="timeline-item">
         <p class="mono mb-1 fw-semibold">2023</p>
@@ -146,7 +146,11 @@
               <img class="project-img mb-3" src="assets/AIStockNewsletterSS.png" alt="AI Stock Newsletter screenshot 1">
               <h3 class="h5">AI Stock Newsletter</h3>
               <p class="text-secondary">Monitor the set stock price and send detailed stock updates to my Telegram channel every day at 9 AM.</p>
-              <a href="#" class="btn btn-sm btn-outline-candy">View Details</a>
+              <button class="btn btn-sm btn-outline-candy" data-bs-toggle="modal" data-bs-target="#projectModal" 
+                data-project-title="AI Stock Newsletter"
+                data-project-description="Monitor the set stock price and send detailed stock updates to my Telegram channel every day at 9 AM."
+                data-project-tech="Python, Telegram Bot, Scheduled Tasks"
+                data-project-image="assets/AIStockNewsletterSS.png">View Details</button>
             </article>
           </div>
 
@@ -155,7 +159,11 @@
               <img class="project-img mb-3" src="https://dummyimage.com/800x500/9ddcff/1c2942&text=Project+02" alt="Dummy project screenshot 2">
               <h3 class="h5">TO BE ANNOUNCE</h3>
               <p class="text-secondary">TO BE ANNOUNCE</p>
-              <a href="#" class="btn btn-sm btn-outline-candy">View Details</a>
+              <button class="btn btn-sm btn-outline-candy" data-bs-toggle="modal" data-bs-target="#projectModal"
+                data-project-title="Coming Soon"
+                data-project-description="This project will be announced soon."
+                data-project-tech="TBA"
+                data-project-image="https://dummyimage.com/800x500/9ddcff/1c2942&text=Project+02">View Details</button>
             </article>
           </div>
 
@@ -164,7 +172,11 @@
               <img class="project-img mb-3" src="https://dummyimage.com/800x500/b5f5cf/16322a&text=Project+03" alt="Dummy project screenshot 3">
               <h3 class="h5">TO BE ANNOUNCE</h3>
               <p class="text-secondary">TO BE ANNOUNCE</p>
-              <a href="#" class="btn btn-sm btn-outline-candy">View Details</a>
+              <button class="btn btn-sm btn-outline-candy" data-bs-toggle="modal" data-bs-target="#projectModal"
+                data-project-title="Coming Soon"
+                data-project-description="This project will be announced soon."
+                data-project-tech="TBA"
+                data-project-image="https://dummyimage.com/800x500/b5f5cf/16322a&text=Project+03">View Details</button>
             </article>
           </div>
         </div>
@@ -177,7 +189,7 @@
           <div class="col-lg-6 reveal">
             <div class="glass-card p-4 p-md-5 h-100">
               <h2 class="section-title mb-3">Let Us Build Something</h2>
-              <p class="text-secondary mb-4">Whether you’re exploring an idea or already building something, I’d love to hear from you. Let’s talk.</p>
+              <p class="text-secondary mb-4">Whether you're exploring an idea or already building something, I'd love to hear from you. Let's talk.</p>
 
               <form action="https://formsubmit.co/d6e61036b178eb8e8af41906ca3f8e3b" method="POST" class="row g-3">
   <!-- Optional settings -->
@@ -232,13 +244,36 @@
                   allowfullscreen>
                 </iframe>
               </div>
-              <p class="text-secondary mt-3 mb-0 px-2">Currently based in Penang, Malaysia. Feel free to reach out if you’re nearby!</p>
+              <p class="text-secondary mt-3 mb-0 px-2">Currently based in Penang, Malaysia. Feel free to reach out if you're nearby!</p>
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Project Details Modal -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content glass-card">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="projectModalLabel">Project Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modalProjectImage" src="" alt="Project image" class="img-fluid mb-3 rounded">
+          <h4 id="modalProjectTitle" class="mb-2">Project Title</h4>
+          <p id="modalProjectDescription" class="text-secondary mb-3">Project description goes here.</p>
+          <p class="mb-1"><strong>Tech Stack:</strong></p>
+          <p id="modalProjectTech" class="text-secondary">Technologies used</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-candy" data-bs-dismiss="modal">Close</button>
+          <a href="#" class="btn btn-candy">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="py-4" id="footer">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
@@ -251,5 +286,21 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    // Handle project modal data
+    const projectModal = document.getElementById('projectModal');
+    projectModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const title = button.getAttribute('data-project-title');
+      const description = button.getAttribute('data-project-description');
+      const tech = button.getAttribute('data-project-tech');
+      const image = button.getAttribute('data-project-image');
+
+      document.getElementById('modalProjectTitle').textContent = title;
+      document.getElementById('modalProjectDescription').textContent = description;
+      document.getElementById('modalProjectTech').textContent = tech;
+      document.getElementById('modalProjectImage').src = image;
+    });
+  </script>
 </body>
 </html>
