@@ -156,14 +156,15 @@
 
           <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.08s;">
             <article class="glass-card project-card p-3">
-              <img class="project-img mb-3" src="https://dummyimage.com/800x500/9ddcff/1c2942&text=Project+02" alt="Dummy project screenshot 2">
-              <h3 class="h5">TO BE ANNOUNCE</h3>
-              <p class="text-secondary">TO BE ANNOUNCE</p>
+              <img class="project-img mb-3" src="assets/WorkBuddyUtilitySS.png" alt="WorkBuddy Utility screenshot">
+              <h3 class="h5">WorkBuddy Utility</h3>
+              <p class="text-secondary">A tiny desktop cat that lives on your Windows taskbar. Private, local, no account needed. Free and open source (MIT).</p>
               <button class="btn btn-sm btn-outline-candy" data-bs-toggle="modal" data-bs-target="#projectModal"
-                data-project-title="Coming Soon"
-                data-project-description="This project will be announced soon."
-                data-project-tech="TBA"
-                data-project-image="https://dummyimage.com/800x500/9ddcff/1c2942&text=Project+02">View Details</button>
+                data-project-title="WorkBuddy Utility"
+                data-project-description="A tiny desktop cat that lives on your Windows taskbar. Private, local, no account needed. Free and open source (MIT)."
+                data-project-tech="C# on .NET 8 (net8.0 and net8.0-windows)"
+                data-project-download="assets/downloads/WorkBuddyUtility.exe"
+                data-project-image="assets/WorkBuddyUtilitySS.png">View Details</button>
             </article>
           </div>
 
@@ -268,6 +269,7 @@
           <p id="modalProjectTech" class="text-secondary">Technologies used</p>
         </div>
         <div class="modal-footer border-0">
+          <a id="modalProjectDownload" class="btn btn-candy d-none" download>Download for Windows (.exe)</a>
           <button type="button" class="btn btn-outline-candy" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
@@ -294,6 +296,15 @@
       const description = button.getAttribute('data-project-description');
       const tech = button.getAttribute('data-project-tech');
       const image = button.getAttribute('data-project-image');
+      const download = button.getAttribute('data-project-download');
+      const downloadButton = document.getElementById('modalProjectDownload');
+
+      downloadButton.classList.toggle('d-none', !download);
+      if (download) {
+        downloadButton.setAttribute('href', download);
+      } else {
+        downloadButton.removeAttribute('href');
+      }
 
       document.getElementById('modalProjectTitle').textContent = title;
       document.getElementById('modalProjectDescription').textContent = description;
